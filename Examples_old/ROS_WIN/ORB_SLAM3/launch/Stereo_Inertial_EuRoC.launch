@@ -1,0 +1,8 @@
+<launch>
+    <arg name="dataset_path" default = "$(find orb_slam3)/ORBvoc.txt" />
+    <arg name="vocab_file" default = "$(find orb_slam3)/ORBvoc.txt" />
+    <arg name="config_file" default = "$(find orb_slam3)/config/Stereo-Inertial/EuRoC.yaml" />
+
+    <node name="Stereo_Inertial_EuRoC" pkg="orb_slam3" type="Stereo_Inertial" output="screen" args="$(arg vocab_file) $(arg config_file) true"/>
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <arg name="dataset_bag" default = "D:/Dl_Works/dataset/video/EuRoC/V1_01_easy.bag" />
+
+    <node name="EuRoC_Dataset" pkg="rosbag" type="play" output="screen" args="--pause $(arg dataset_bag) /cam0/image_raw:=/camera/left/image_raw /cam1/image_raw:=/camera/right/image_raw /imu0:=/imu"/>
+
+</launch>
