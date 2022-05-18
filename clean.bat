@@ -1,7 +1,9 @@
 echo "clean all build files"
 
 del Vocabulary\ORBvoc.txt
+del Vocabulary\ORBvoc.bin
 
+del tools\*.exe*
 del Examples\Calibration\*.exe*
 del Examples\Monocular\*.exe*
 del Examples\Monocular-Inertial\*.exe*

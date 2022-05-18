@@ -34,6 +34,10 @@ cd build
 cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
 nmake
 
+echo "Converting vocabulary to binary"
+cd ..\tools
+call .\bin_vocabulary.exe
+
 echo "Building ROS nodes & install to d:/ros_extpkg"
 cd ..\Examples_old\ROS_WIN\ORB_SLAM3
 md d:\ros_extpkg
@@ -42,4 +46,4 @@ cd build
 cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=D:\ros_extpkg
 nmake install
 
-cd ..\..\..\
+cd ..\..\..\..\

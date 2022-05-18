@@ -146,8 +146,13 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
 
         // 建立一个新的ORB字典//
         mpVocabulary = new ORBVocabulary();
-        // 读取预训练好的ORB字典并返回成功/失败标志//
-        bool bVocLoad = mpVocabulary->loadFromTextFile(strVocFile);
+        // 读取预训练好的ORB字典.txt or .bin并返回成功/失败标志//
+        bool bVocLoad;
+        if(strVocFile.find(".txt") != std::string::npos)
+            bVocLoad = mpVocabulary->loadFromTextFile(strVocFile);
+        else
+            bVocLoad = mpVocabulary->loadFromBinaryFile(strVocFile);
+		
         // 如果加载失败，就输出错误信息//
         if(!bVocLoad)
         {
